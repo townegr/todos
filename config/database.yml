@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: todo_list_production
-  username: todo_list
-  password: 6160cd6be64a8add1054912a234af406661d1911e7f3dcfbfbd99208b7b251365e5dc20aac99c8c4c4b558645daa6abf3c37674e6ff8ef98749829213c098bb1
+  username:
+  password:
