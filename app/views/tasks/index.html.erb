@@ -1,0 +1,18 @@
+<div align="center">
+  <br>
+  <%#= "Welcome #{current_user.first_name}!" %>
+<h2>New Task</h2>
+
+<%= render 'form' %>
+<%= render 'task' %>
+
+<% content_for :extra_footer do %>
+  <script>
+  $(function(){
+    $('.tasks').on('ajax:complete', function(event, response){
+      $(event.target).parent();
+    });
+  });
+  </script>
+<% end %>
+</div>

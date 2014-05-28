@@ -1,0 +1,21 @@
+<div id='tasks'>
+  <%= form_tag tasks_complete_path, method: :post do %>
+    <table>
+      <tbody>
+        <% @tasks.each do |task| %>
+        <tr>
+          <% if task.completed == true %>
+            <td><%= check_box_tag 'tasks_checkbox[]', task.id %> <strike><%= task.title %></strike></td>
+          <% else %>
+            <td><%= check_box_tag 'tasks_checkbox[]', task.id %> <%= task.title %></td>
+          <% end %>
+          <td><%= link_to 'More Details', task_path(task) %></td>
+          <td><%= link_to 'Edit', edit_task_path(task) %></td>
+          <td><%= link_to 'Delete', task, method: :delete %></td>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
+  <%= submit_tag('Toggle Tasks') %>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<div class="contain-to-grid">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <% if user_signed_in? %>
+        <h1><%= link_to 'To Do List', tasks_path %><!-- <a href="/">To Do List</a> --></h1>
+        <% else %>
+        <h1><%= link_to 'To Do List', root_path %></h1>
+        <% end %>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        <% if user_signed_in? %>
+          <li class="right">
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="left">
+            <%= link_to 'Sign Up', new_user_registration_path %>
+          </li>
+          <li class="left">
+            <%= link_to 'Log In', new_user_session_path %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </nav>
+</div>
+
